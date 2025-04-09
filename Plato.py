@@ -5,20 +5,20 @@ from random import randint
 
 class Plato:
     def __init__(self,num):
-        self.num=num #numero de plato
-        self.comida_disponible = 5 #porsiones en el plato 
-        self.semaforo = threading.Semaphore(2) # semaforo para dos gato simultaneos
+        self.num = num #numero de plato
+        self.comida_disponible = 3 #porciones en el plato 
+        self.semaforo = threading.Semaphore(1) # semaforo para dos gato simultaneos
         self.lock = threading.Lock() # lock para poder bloquear la concurrencia en el plato 
     
     def comiendo(self, porcion):
-        with self.lock: #bloqueando para que no puedan mas de dos gatos comer al mismo tiempo
+        with self.lock: #bloqueando para que no pueda comer más de un gato a la vez
             if self.porciones >= porcion:   #validando que haya suficiente comida
                 self.comida_disponible -= porcion #reajustando las cantidades
-                print(f"El plato {self.num} ahora tiene {self.comida_disponible} porciones")    #mensaje
+                print(f"El plato {self.num} ahora tiene {self.comida_disponible} porciones") #mensaje
                 return True             #indicacion de que si comio
             else:
                 print(f"El plato {self.num} no tiene suficientes porciones")
-                return False            #3indicacion de que no comió
+                return False            #indicacion de que no comió
 
     def rellenar(self):
         with self.lock: #lockeo para que no se lastime ningun gato(si no se hace se mezclan las interacciones)

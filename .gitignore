@@ -8,27 +8,10 @@ __pycache__/
 *.tmp
 *.temp
 
-# Entornos virtuales (por si usas uno)
-venv/
-env/
-.venv/
-.env/
-
-# Archivos generados por el sistema operativo
-.DS_Store
-Thumbs.db
-
 # Archivos de ejecución/corridas
 *.out
 *.pid
 *.lock
-
-# Archivos de debugging
-*.swp
-*.bak
-
-# Archivos específicos si usas Jupyter o notebooks
-.ipynb_checkpoints/
 
 # Carpetas ocultas de configuración
 .idea/
