@@ -2,7 +2,7 @@ import threading
 from time import sleep
 from random import randint
 
-class gatito(threading.Thread): #Herencia de threading.Thread Para la independencia de cada gato
+class Gato(threading.Thread): #Herencia de threading.Thread Para la independencia de cada gato
 
     #Constructor de la clase gatito
     def __init__(self, nombre, tipo):
@@ -40,7 +40,4 @@ class gatito(threading.Thread): #Herencia de threading.Thread Para la independen
             self.estado="hambriento"
         
         self.plato.semaforo.realease() #libera el semaforo 
-        
-"""INTRODUCIR METODOS PARA LA INTERFAZ GRAFICA"""        
-"""INTRODUCIR ACTUALIZACION EN LOS METODOS PARA LA INTERFAZ GRAFICA """    
 
