@@ -12,7 +12,7 @@ class gatito(threading.Thread): ##Herencia de threading.Thread Para la independe
         self.estado = "hambriento" ##Define el estado que tendra el gato
         self.porciones = 0  ##cuantas porciones ha comido el gato
         self.plato = plato  ##en que plato esta llevando la accion, para el considerarlo en el semaphoro
-    """INTRODUCIR ATRIBUTOS PARA QUE LA CLAS EPUEDA INTERACTUAR CON LA INTERFA<"""        
+    """INTRODUCIR ATRIBUTOS PARA QUE LA CLASE PUEDA INTERACTUAR CON LA INTERFA<"""        
     ##funcion para que el hilo trabaje
     def run(self):
         ##cilo para que se repita esta acción
@@ -41,6 +41,6 @@ class gatito(threading.Thread): ##Herencia de threading.Thread Para la independe
         
         self.plato.semaforo.realease() #libera el semaforo 
         
-  """INTRODUCIR METODOS PARA LA INTERFAZ GRAFICA"""        
+"""INTRODUCIR METODOS PARA LA INTERFAZ GRAFICA"""        
 """INTRODUCIR ACTUALIZACION EN LOS METODOS PARA LA INTERFAZ GRAFICA """    
 

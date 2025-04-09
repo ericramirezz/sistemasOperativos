@@ -11,7 +11,7 @@ class Plato:
         self.lock = threading.Lock() ## lock para poder bloquear la concurrencia en el plato 
     
     def comiendo(self, porcion):
-        with self.lock ##bloqueanod para que no puedan mas de dos gatos comer al mismo tiempo
+        with self.lock: ##bloqueanod para que no puedan mas de dos gatos comer al mismo tiempo
             if self.porciones >= porcion:   ##validadno que haya suficiente comida
                 self.comida_disponible -= porcion ##reajustando las cantidades
                 print(f"El plato {self.num} ahora tiene {self.comida_disponible} porciones")    ##mensaje
@@ -21,7 +21,7 @@ class Plato:
                 return False            #3indicacion de que no comió
 
     def rellenar(self):
-        with self.lock ##lockeo para que no se lastime ningun gato(si no se hace se mezclan las interacciones)
+        with self.lock: ##lockeo para que no se lastime ningun gato(si no se hace se mezclan las interacciones)
             if self.comida_disponible < 5:
                 self.comida_disponible += 3
                 if self.comida_disponible > 5:
@@ -36,6 +36,6 @@ class Plato:
     
 
 
-  """INTRODUCIR METODOS PARA LA INTERFAZ GRAFICA"""        
+"""INTRODUCIR METODOS PARA LA INTERFAZ GRAFICA"""        
 """INTRODUCIR ACTUALIZACION EN LOS METODOS PARA LA INTERFAZ GRAFICA """    
 
