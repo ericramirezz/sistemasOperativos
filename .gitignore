@@ -1,18 +1,14 @@
-# Archivos de caché de Python
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Archivos temporales
 *.log
 *.tmp
 *.temp
 
-# Archivos de ejecución/corridas
 *.out
 *.pid
 *.lock
 
-# Carpetas ocultas de configuración
 .idea/
 .vscode/

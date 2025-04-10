@@ -1,7 +1,7 @@
 import threading
 from time import sleep
 from enum import Enum
-from random import randint
+import random
 
 class EstadoGato(Enum):
     HAMBRIENTO = 1
@@ -9,13 +9,18 @@ class EstadoGato(Enum):
     SATISFECHO = 3
     ENFERMO = 4
     
+class TipoGato(Enum):
+    MACHO = "macho"
+    HEMBRA = "hembra"
+    INVASOR = "invasor"
+    
 class Gato(threading.Thread): #Herencia de threading.Thread Para la independencia de cada gato
 
     #Constructor de la clase gatito
-    def __init__(self, nombre, genero):
+    def __init__(self, nombre, tipo):
         threading.Thread.__init__(self) #llama a la clase para que garantice el ser un hilo
         self.nombre = nombre #Por que cada gato tiene un nombre
-        self.genero = genero   #Si es hembra, macho o invasor
+        self.tipo = tipo   #Si es hembra, macho o invasor
         self.estado = EstadoGato.SATISFECHO #Define el estado que tendra el gato
         self.porciones   #cuantas porciones ha comido el gato
         #self.plato = plato  #en que plato esta llevando la accion, para el considerarlo en el semaphoro
